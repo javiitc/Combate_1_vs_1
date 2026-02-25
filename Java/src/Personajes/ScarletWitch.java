@@ -1,4 +1,4 @@
 package Personajes;
 
-public class ScarletWitch {
+public class ScarletWitch extends Personaje{
 }
