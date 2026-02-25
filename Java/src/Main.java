@@ -12,6 +12,8 @@ public class Main {
         ScarletWitch wanda = new ScarletWitch("Wanda", 100);
         VictorVonDoom doom = new VictorVonDoom("Doctor Doom", 100, "Energy Blast", "Power up of Molecule Man",
                 "Magic Guard" );
+        Personaje attacker;
+        Personaje defender;
 
         System.out.println("After the disasters due to incursions around multiverse, there was no hope for our heroes, but at the end of all \n" +
                 "one man stands up against the responsibles of the incursions. Thanks to Doctor Strange and Molecule Man, Victor Von Doom was able to absorb and control \n" +
@@ -35,17 +37,20 @@ public class Main {
         int turn = 1;
         boolean battle = true;
         int whoBegin = random.nextInt(2);
+        if (whoBegin == 0) {
+            attacker = wanda;
+            defender = doom;
+            System.out.println(wanda.getName() + " starts the battle");
+        } else {
+            attacker = doom;
+            defender = wanda;
+            System.out.println(doom.getName() + " starts the battle");
+        }
 
         while (battle) {
             System.out.println("Turn " + turn);
 
-            if (whoBegin == 0) {
-                System.out.println(wanda.getName() + " starts the battle");
-            } else {
-                System.out.println(doom.getName() + " starts the battle");
-            }
 
-            
         }
     }
 }

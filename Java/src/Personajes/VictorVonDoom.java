@@ -25,12 +25,12 @@ public class VictorVonDoom extends Personaje{
         return defenseHability;
     }
 
-    public void doomAttack (Personaje enemy, VictorVonDoom doom){
+    public void doomAttack (Personaje enemy){
         if (Math.random() > 0.3) {
-            System.out.println(doom.getName() + "uses " + doom.getSpecialAttack());
+            System.out.println(this.getName() + "uses " + this.getSpecialAttack());
             enemy.takeDamage(25);
         } else {
-            System.out.println(doom.getName() + "uses Magic Punch");
+            System.out.println(this.getName() + "uses Magic Punch");
             enemy.takeDamage(10);
         }
     }
