@@ -7,16 +7,12 @@ public class VictorVonDoom extends Personaje{
     private int magicQuantity;
     private String defenseHability;
 
-    public VictorVonDoom(String name, int hp, int attackDmg, int specialAttackDmg, String specialAttack, String hability, int magicQuantity, String defenseHability) {
-        super(name, hp, attackDmg, specialAttackDmg);
-        setName("Doctor Doom");
-        setHp(180);
-        setAttackDmg(35);
-        setSpecialAttackDmg(70);
-        this.specialAttack = "Energy Blast";
-        this.hability = "Beyonder Power Absorb";
-        this.magicQuantity = 120;
-        this.defenseHability = "Magic Guard";
+    public VictorVonDoom(String name, int health, String specialAttack, String hability, int magicQuantity, String defenseHability) {
+        super(name, health);
+        this.specialAttack = specialAttack;
+        this.hability = hability;
+        this.magicQuantity = magicQuantity;
+        this.defenseHability = defenseHability;
     }
 
     public String getSpecialAttack() {
