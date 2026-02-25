@@ -29,6 +29,7 @@ public class Main {
         System.out.println(wanda.getName() + " also well-known as Scarlet Witch");
         System.out.println("The battle for restore the multiverse begins");
 
-
+        int turn = 1;
+        boolean battle = true;
     }
 }
