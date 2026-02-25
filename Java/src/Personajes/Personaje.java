@@ -44,6 +44,7 @@ public abstract class Personaje {
     2. Tanto Wanda como Doom al ser subclases, comparten comportamientos al heredarlas, pero los métodos de ataque y defensa son unicos para cada uno,
     así que definiendo ambas como abstractas, se obliga a que todos los que hereden la clase Personajes, tengan un ataque y defensa unicos, que hay que definir dentro. */
 
-    public abstract int attack(Personaje enemy);
+    public abstract int attack();
     public abstract void defend(int incomingDamage);
+    public abstract String winMessage ();
 }

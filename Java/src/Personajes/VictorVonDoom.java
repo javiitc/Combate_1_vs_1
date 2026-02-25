@@ -26,9 +26,9 @@ public class VictorVonDoom extends Personaje{
     }
 
     @Override
-    public int attack (Personaje enemy){
+    public int attack (){
         if (Math.random() > 0.3) {
-            System.out.println(this.getName() + "uses " + this.getSpecialAttack());
+            System.out.println(this.getName() + " uses " + this.getSpecialAttack());
             return 25;
         } else {
             System.out.println(this.getName() + "uses Magic Punch");
@@ -39,5 +39,10 @@ public class VictorVonDoom extends Personaje{
     @Override
     public void defend (int incomingDmg) {
         System.out.println("Magic Guard! Doom blocked the attack. No damage received.");
+    }
+
+    @Override
+    public String winMessage() {
+        return "DOOM is eternal. There was never any doubt. BattleWorld endures!";
     }
 }

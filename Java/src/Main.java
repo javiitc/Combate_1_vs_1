@@ -51,7 +51,26 @@ public class Main {
             System.out.println("Turn " + turn);
             System.out.println(wanda.getName() + " HP: " + wanda.getHealth() + " || " + doom.getName() + " HP: " + doom.getHealth());
 
-            
+            int damage = attacker.attack();
+            boolean defend = random.nextInt(10) < 3;
+
+            if (defend) {
+                System.out.println(defender.getName() + " decides to defend against the attack!");
+                defender.defend(damage);
+            } else {
+                defender.takeDamage(damage);
+            }
+
+            if (!defender.isAlive()) {
+                System.out.println(defender.getName() + " has been defeated!");
+                System.out.println(attacker.winMessage());
+                battle = false;
+            } else {
+                Personaje temporal = attacker;
+                attacker = defender;
+                defender = temporal;
+                turn++;
+            }
         }
     }
 }
