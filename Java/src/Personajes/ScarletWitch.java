@@ -11,23 +11,14 @@ public class ScarletWitch extends Personaje {
      * Scarlet Blast (high dmg) | Mind Control (low dmg)
      */
     @Override
-    public void attack(Personaje enemy) {
+    public int attack(Personaje enemy) {
         if (Math.random() > 0.3) {
             System.out.println("Scarlet Witch uses Scarlet Blast!");
-            enemy.takeDamage(25);
+            return 25;
         } else {
             System.out.println("Scarlet Witch uses Mind Control!");
-            enemy.takeDamage(10);
+            return 10;
         }
-    }
-
-    /**
-     * takes damage
-     */
-    @Override
-    public void takeDamage(int amount) {
-        this.setHealth(this.getHealth() - amount);
-        System.out.println("Wanda took " + amount + " damage. Remaining health: " + this.getHealth());
     }
 
     /**

@@ -25,25 +25,19 @@ public class VictorVonDoom extends Personaje{
         return defenseHability;
     }
 
-    public void doomAttack (Personaje enemy){
+    @Override
+    public int attack (Personaje enemy){
         if (Math.random() > 0.3) {
             System.out.println(this.getName() + "uses " + this.getSpecialAttack());
-            enemy.takeDamage(25);
+            return 25;
         } else {
             System.out.println(this.getName() + "uses Magic Punch");
-            enemy.takeDamage(10);
+            return 10;
         }
     }
 
     @Override
-    public void takeDamage(int amount) {
-        this.setHealth(this.getHealth() - amount);
-        System.out.println("Doctor Doom took " + amount + " damage. Remaining health: " + this.getHealth());
-    }
-
-    public void blockAttack (int incomingDmg) {
-        incomingDmg = 0;
-        this.setHealth(getHealth() - incomingDmg);
+    public void defend (int incomingDmg) {
         System.out.println("Magic Guard! Doom blocked the attack. No damage received.");
     }
 }

@@ -40,17 +40,18 @@ public class Main {
         if (whoBegin == 0) {
             attacker = wanda;
             defender = doom;
-            System.out.println(wanda.getName() + " starts the battle");
         } else {
             attacker = doom;
             defender = wanda;
-            System.out.println(doom.getName() + " starts the battle");
         }
+
+        System.out.println(attacker.getName() + " starts the battle!");
 
         while (battle) {
             System.out.println("Turn " + turn);
+            System.out.println(wanda.getName() + " HP: " + wanda.getHealth() + " || " + doom.getName() + " HP: " + doom.getHealth());
 
-
+            
         }
     }
 }

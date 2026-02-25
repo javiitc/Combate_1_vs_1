@@ -12,9 +12,8 @@ public abstract class Personaje {
     }
 
     public void takeDamage(int amount) {
-        this.health -= amount;
-        if (this.health < 0) this.health = 0;
-        System.out.println(name + " now has " + health + " HP.");
+        this.setHealth(this.getHealth() - amount);
+        System.out.println(name + " took " + amount + " damage. Remaining health: " + this.getHealth());
     }
 
     public boolean isAlive() {
@@ -38,11 +37,13 @@ public abstract class Personaje {
         this.name = name;
     }
 
-    //Usamos la clase abstracta para hacer la plantilla personajes por dos motivos:
-    //1. Debido a que en el Main se guarda el personaje en atacante y defensor, así el programa sabe de quién (Wanda o Doom) viene el ataque o defensa.
-    //En caso contrario, habría que decirle manualmente que a que objeto hacemos referencia (Wanda o Doom).
-    //2. Tanto Wanda como Doom al ser subclases, comparten comportamientos al heredarlas, pero los métodos de ataque y defensa son unicos para cada uno,
-    //así que definiendo ambas como abstractas, se obliga a que todos los que hereden la clase Personajes, tengan un ataque y defensa unicos, que hay que definir dentro.
-    public abstract void attack(Personaje enemy);
+    /**
+     Usamos la clase abstracta para hacer la plantilla personajes por dos motivos:
+    1. Debido a que en el Main se guarda el personaje en atacante y defensor, así el programa sabe de quién (Wanda o Doom) viene el ataque o defensa.
+    En caso contrario, habría que decirle manualmente que a que objeto hacemos referencia (Wanda o Doom).
+    2. Tanto Wanda como Doom al ser subclases, comparten comportamientos al heredarlas, pero los métodos de ataque y defensa son unicos para cada uno,
+    así que definiendo ambas como abstractas, se obliga a que todos los que hereden la clase Personajes, tengan un ataque y defensa unicos, que hay que definir dentro. */
+
+    public abstract int attack(Personaje enemy);
     public abstract void defend(int incomingDamage);
 }
